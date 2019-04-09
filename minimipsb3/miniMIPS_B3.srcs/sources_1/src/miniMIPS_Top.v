@@ -86,6 +86,10 @@ module miniMIPS_Top
     wire         wb_wreg_o;
     wire [ 4: 0] wb_wraddr_o;
 
+    wire [ 4: 0] regaddr_from_id_ex;//+++++++++++++++++++++++++++++++
+    wire [31: 0] regdata_from_ex;//++++++++++++++++++++++++++++++++++
+    wire         reg_enable_from_ex;//++++++++++++++++++++++++++++++
+
     // IF stage
     PC pc
     (
@@ -114,6 +118,10 @@ module miniMIPS_Top
     // ID stage
     ID id
     (
+        .regaddr_from_id_ex ( regaddr_from_id_ex),//+++++++++++
+        .regdata_from_ex    ( regdata_from_ex),//+++++++++++++
+        .reg_enable_from_ex ( reg_enable_from_ex)//+++++++++++++
+        
         .pc         ( id_pc     ),
         .inst       ( id_inst   ),
         .r1addr     ( r1addr    ),
@@ -141,7 +149,7 @@ module miniMIPS_Top
         .r2data     ( r2data     ),
         .wreg       ( wb_wreg_o  ),
         .wraddr     ( wb_wraddr_o), 
-        .wrdata     ( wb_wrdata  )
+        .wrdata     ( wb_wrdata  ),
     );
 
     //ID_EX
@@ -163,7 +171,8 @@ module miniMIPS_Top
         .ex_opr2    ( ex_opr2   ),
         .ex_offset  ( ex_offset ),
         .ex_wreg    ( ex_wreg   ),
-        .ex_wraddr  ( ex_wraddr )
+        .ex_wraddr  ( ex_wraddr ),
+        .ex_wraddr  ( regaddr_from_id_ex )//++++++++++++++++++++++++++++
     );
 
     //EX stage
@@ -177,7 +186,9 @@ module miniMIPS_Top
         .alures     ( ex_alures ),
         .m_wen      ( ex_m_wen  ),
         .m_addr     ( ex_m_addr ),
-        .m_dout     ( ex_m_dout )
+        .m_dout     ( ex_m_dout ),
+
+        .
     );
 
     //EX_MEM
@@ -192,14 +203,15 @@ module miniMIPS_Top
         .ex_m_dout  ( ex_m_dout     ),
         .ex_wreg    ( ex_wreg       ),
         .ex_wraddr  ( ex_wraddr     ),
-        
+        .ex_wraddr  ( )
         .mem_aluop  ( mem_aluop     ),
         .mem_alures ( mem_alures    ),
         .mem_m_wen  ( mem_m_wen     ),
         .mem_m_addr ( mem_m_addr    ),
         .mem_m_dout ( mem_m_dout    ),
         .mem_wreg   ( mem_wreg      ),
-        .mem_wraddr ( mem_wraddr    )
+        .mem_wraddr ( mem_wraddr    ),
+
     );
 
     //MEM stage

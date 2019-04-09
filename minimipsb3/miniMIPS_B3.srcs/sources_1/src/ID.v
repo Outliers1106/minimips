@@ -37,6 +37,10 @@ module ID
     output reg  [31: 0] br_addr,    // branch address
 
     output wire         stallreq    // use to requre the pipeline stall, you can use it
+
+    input  wire [31: 0] regdata_from_id_ex;//++++++++++++
+    input  wire [ 4: 0] regaddr_from_ex;//+++++++++++++
+    input  wire         reg_enable_from_ex;//+++++++++++++
 );
 
     wire [ 5: 0] opcode    = inst[31:26];
@@ -64,7 +68,12 @@ module ID
     assign offset = sign_ext;
     assign opr1 = r1read ? r1data : ext_imme;
     assign opr2 = r2read ? r2data : ext_imme;
-
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    always @(*) begin
+	if ((r1addr==regaddr_from_ex)&&(reg_enable_from_ex==1'b1)&&(r1read==1'b1)) begin
+		opr1 = regdata_from_id_ex;
+		end
+	end
     always @(*) begin
         aluop     <= `ALU_NOP;
         r1read    <= 1'b0;
