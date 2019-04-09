@@ -1,0 +1,105 @@
+/*
+
+Vivado v2014.4 (64-bit)
+SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+Process ID: 15100
+
+Current time: 	3/30/19 10:54:27 AM
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 2
+
+Java version: 	1.8.0_05 64-bit
+Java home: 	G:/Xilinx/Vivado/2014.4/tps/win64/jre
+
+User name: 	hh
+User directory: E:/minimipsb3/minimips
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+Vivado preferences path: C:/Users/hh/AppData/Roaming/Xilinx/Vivado/2014.4/vivado.ini
+Vivado layouts directory: C:/Users/hh/AppData/Roaming/Xilinx/Vivado/2014.4/layouts/application
+
+GUI allocated memory:	202 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 464 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cm:N (ch:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/minimipsb3/minimips/minimips.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 57 MB (+57058kb) [00:00:07]
+// [Engine Memory]: 379 MB (+245443kb) [00:00:07]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 400 MB (+22691kb) [00:00:08]
+// [Engine Memory]: 460 MB (+63197kb) [00:00:09]
+// [Engine Memory]: 464 MB (+4214kb) [00:00:10]
+// Tcl Message: open_project E:/minimipsb3/minimips/minimips.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/Xilinx/Vivado/2014.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 466 MB. GUI used memory: 34 MB. Current time: 3/30/19 10:54:27 AM
+// [Engine Memory]: 466 MB (+1273kb) [00:00:11]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 466 MB (+757kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 468 MB (+1630kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 468 MB (+565kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 470 MB (+1781kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 472 MB (+1646kb) [00:00:12]
+// [Engine Memory]: 473 MB (+888kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: minimips; location: E:/minimipsb3/minimips; part: xc7a35tcpg236-1
+// [Engine Memory]: 474 MB (+1302kb) [00:00:13]
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 737.293 ; gain = 179.910 
+dismissDialog("Open Project"); // cm:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 57 MB (+355kb) [00:00:14]
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 484 MB (+11128kb) [00:00:23]
+// [GUI Memory]: 67 MB (+10670kb) [00:00:27]
+// [Engine Memory]: 485 MB (+1060kb) [00:00:27]
+// [Engine Memory]: 493 MB (+7553kb) [00:00:38]
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 25, true); // w:Y (v:I, ch:JFrame) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// [Engine Memory]: 495 MB (+2260kb) [00:00:38]
+// [GUI Memory]: 70 MB (+2556kb) [00:00:38]
+// [Engine Memory]: 495 MB (+602kb) [00:00:38]
+// Tcl Message: open_hw 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Hardware Manager]", 25, true); // w:Y (v:I, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Hardware Manager]", 25, true); // w:Y (v:I, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Hardware Manager, Open Target]", 26, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+// HMemoryUtils.trashcanNow. Engine heap size: 495 MB. GUI used memory: 42 MB. Current time: 3/30/19 10:54:56 AM

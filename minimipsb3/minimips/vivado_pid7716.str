@@ -1,0 +1,87 @@
+/*
+
+Vivado v2014.4 (64-bit)
+SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+Process ID: 7716
+
+Current time: 	3/30/19 10:57:41 AM
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 2
+
+Java version: 	1.8.0_05 64-bit
+Java home: 	G:/Xilinx/Vivado/2014.4/tps/win64/jre
+
+User name: 	hh
+User directory: E:/minimipsb3/minimips
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+Vivado preferences path: C:/Users/hh/AppData/Roaming/Xilinx/Vivado/2014.4/vivado.ini
+Vivado layouts directory: C:/Users/hh/AppData/Roaming/Xilinx/Vivado/2014.4/layouts/application
+
+GUI allocated memory:	206 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 462 MB
+
+*/
+
+// TclEventType: START_GUI
+// HColorUtils.generateUniqueColorPalette (num colors: 56) elapsed time: 0.6s
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cm:N (ch:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/minimipsb3/minimips/minimips.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 58 MB (+58072kb) [00:00:05]
+// [Engine Memory]: 392 MB (+259205kb) [00:00:05]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 408 MB (+17653kb) [00:00:05]
+// [Engine Memory]: 450 MB (+43814kb) [00:00:06]
+// [Engine Memory]: 456 MB (+5869kb) [00:00:07]
+// [Engine Memory]: 462 MB (+6205kb) [00:00:07]
+// Tcl Message: open_project E:/minimipsb3/minimips/minimips.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/Xilinx/Vivado/2014.4/data/ip'. 
+// [Engine Memory]: 468 MB (+6787kb) [00:00:09]
+// HMemoryUtils.trashcanNow. Engine heap size: 468 MB. GUI used memory: 37 MB. Current time: 3/30/19 10:57:42 AM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 469 MB (+299kb) [00:00:10]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 469 MB (+327kb) [00:00:10]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 470 MB (+679kb) [00:00:10]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 471 MB (+1155kb) [00:00:10]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: minimips; location: E:/minimipsb3/minimips; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 740.063 ; gain = 172.762 
+dismissDialog("Open Project"); // cm:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 471 MB (+720kb) [00:00:12]
+// Tcl Message: update_compile_order -fileset sim_1 
+// [Engine Memory]: 473 MB (+1712kb) [00:00:13]
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 480 MB (+7024kb) [00:00:18]
