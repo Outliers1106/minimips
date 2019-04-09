@@ -40,7 +40,7 @@ module ID
 
     input  wire [31: 0] regdata_from_id_ex;//++++++++++++
     input  wire [ 4: 0] regaddr_from_ex;//+++++++++++++
-    input  wire         reg_enable_from_ex;//+++++++++++++
+    input  wire         reg_enable_from_id_ex;//+++++++++++++
 );
 
     wire [ 5: 0] opcode    = inst[31:26];
@@ -70,7 +70,7 @@ module ID
     assign opr2 = r2read ? r2data : ext_imme;
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     always @(*) begin
-	if ((r1addr==regaddr_from_ex)&&(reg_enable_from_ex==1'b1)&&(r1read==1'b1)) begin
+	if ((r1addr==regaddr_from_ex)&&(reg_enable_from_id_ex==1'b1)&&(r1read==1'b1)) begin
 		opr1 = regdata_from_id_ex;
 		end
 	end
