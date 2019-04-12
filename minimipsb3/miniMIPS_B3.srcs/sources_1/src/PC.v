@@ -20,7 +20,9 @@ module PC
     input  wire         rst,
     input  wire         br_flag,    // branch flags
     input  wire [31: 0] br_addr,    // branch address
-    output reg  [31: 0] pc
+    output reg  [31: 0] pc,
+
+    input  wire [ 5: 0] stall,//++++
 );
 
     always @(posedge clk, posedge rst) begin
@@ -28,8 +30,11 @@ module PC
             pc   <= 32'b0;
         end
         else begin
-            if(br_flag) pc <= br_addr;
-            else pc <= pc + 32'd4;
+            if (stall[0]==1'b0) begin//如果不需要暂停
+               if(br_flag) begin pc <= br_addr;
+                end else begin pc <= pc + 32'd4;
+                end
+            end
         end
     end
 

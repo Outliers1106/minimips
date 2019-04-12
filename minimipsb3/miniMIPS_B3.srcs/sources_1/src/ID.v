@@ -35,12 +35,17 @@ module ID
 
     output reg          br_flag,    // branch flag
     output reg  [31: 0] br_addr,    // branch address
-
+    //流水线暂停
     output wire         stallreq    // use to requre the pipeline stall, you can use it
-
+    //id_ex 冲突
     input  wire [31: 0] regdata_from_id_ex;//++++++++++++
     input  wire [ 4: 0] regaddr_from_ex;//+++++++++++++
     input  wire         reg_enable_from_id_ex;//+++++++++++++
+    //id_mem冲突
+    input  wire [31: 0] regdata_from_mem;//++++
+    input  wire [ 4: 0] regaddr_from_mem;//++++
+    input  wire         reg_enbale_from_mem;//++++
+
 );
 
     wire [ 5: 0] opcode    = inst[31:26];
@@ -70,9 +75,20 @@ module ID
     assign opr2 = r2read ? r2data : ext_imme;
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     always @(*) begin
-	if ((r1addr==regaddr_from_ex)&&(reg_enable_from_id_ex==1'b1)&&(r1read==1'b1)) begin
-		opr1 = regdata_from_id_ex;
+    //id_ex 冲突
+	if ((r1addr==regaddr_from_id_ex)&&(reg_enable_from_id_ex==1'b1)&&(r1read==1'b1)) begin
+		opr1 = regdata_from_ex;
+        if(aluop==`ALU_LW) begin//流水线暂停
+            stallreq == 1'b1;
+        end
 		end
+    //id_mem 冲突
+    if ((r1addr==regaddr_from_mem)&&(reg_enbale_from_mem==1'b1)&&(r1read==1'b1)) begin
+        opr1 = regaddr_from_mem;
+        if(aluop==`ALU_LW) begin//流水线暂停
+            stallreq == 1'b1;
+        end
+    end
 	end
     always @(*) begin
         aluop     <= `ALU_NOP;

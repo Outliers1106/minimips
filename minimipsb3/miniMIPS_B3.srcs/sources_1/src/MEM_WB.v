@@ -40,7 +40,14 @@ module MEM_WB
             wb_wreg   <= 1'b0;
             wb_wraddr <= 5'b0;
         end
-        else begin
+        else if(stall[4]==1'b1&&stall[5]==1'b0) begin
+            wb_aluop  <= 4'h0;
+            wb_alures <= 32'b0;
+            wb_m_din  <= 32'b0;
+            wb_wreg   <= 1'b0;
+            wb_wraddr <= 5'b0;
+        end
+        else if (stall[4]==1'b0) begin
             wb_aluop  <= mem_aluop;
             wb_alures <= mem_alures;
             wb_m_din  <= mem_m_din;
