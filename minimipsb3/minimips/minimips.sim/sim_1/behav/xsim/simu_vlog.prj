@@ -5,6 +5,7 @@ verilog dist_mem_gen_v8_0  --include "../../../../minimips.srcs/sources_1/import
 verilog xil_defaultlib  --include "../../../../minimips.srcs/sources_1/imports/src" \
 "../../../../minimips.srcs/sources_1/ip/irom/sim/irom.v" \
 "../../../../minimips.srcs/sources_1/imports/src/Basys3_Top.v" \
+"../../../../minimips.srcs/sources_1/imports/src/CTRL.v" \
 "../../../../minimips.srcs/sources_1/imports/src/EX.v" \
 "../../../../minimips.srcs/sources_1/imports/src/EX_MEM.v" \
 "../../../../minimips.srcs/sources_1/imports/src/ID.v" \

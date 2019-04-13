@@ -85,6 +85,18 @@ module miniMIPS_Top
 
     wire         wb_wreg_o;
     wire [ 4: 0] wb_wraddr_o;
+    //解决ex_id冲突�?增加的连�?
+    wire [ 4: 0] regaddr_from_id_ex;//+++++++++++++++++++++++++++++++
+    wire [31: 0] regdata_from_ex;//++++++++++++++++++++++++++++++++++
+    wire         reg_enable_from_id_ex;//++++++++++++++++++++++++++++++
+    //解决mem_id冲突�?增加的连�?
+    wire [ 4: 0] regaddr_from_mem;
+    wire [31: 0] regdata_from_mem;
+    wire         reg_enable_from_mem;
+    //流水线暂�?
+    wire         stallreq_from_id;
+    //wire         stallreq_from_ex;
+    wire [ 5: 0] stall;
 
     // IF stage
     PC pc
@@ -93,7 +105,9 @@ module miniMIPS_Top
         .rst        ( rst       ),
         .br_flag    ( br_flag   ),
         .br_addr    ( br_addr   ),
-        .pc         ( if_pc     )
+        .pc         ( if_pc     ),
+        //流水线暂�?
+        .stall      ( stall)
     );
 
     assign inst_addr = if_pc;
@@ -108,12 +122,30 @@ module miniMIPS_Top
         .if_inst    ( if_inst   ),
 
         .id_pc      ( id_pc     ),
-        .id_inst    ( id_inst   )
+        .id_inst    ( id_inst   ),
+        //流水线暂�?
+        .stall      ( stall)
     );
 
     // ID stage
     ID id
     (
+        //解决id_ex冲突
+        //.regaddr_from_id_ex ( regaddr_from_id_ex),//+++++++++++
+        .reg_enable_from_id_ex            (ex_wreg), 
+        .regaddr_from_id_ex              (ex_wraddr ),
+        .regdata_from_ex                (ex_alures),
+        //.regdata_from_ex    ( regdata_from_ex),//+++++++++++++
+        //.reg_enable_from_id_ex ( reg_enable_from_id_ex),//+++++++++++++
+        //解决id_mem冲突
+        .regaddr_from_mem (mem_wraddr_o),//++++
+        .regdata_from_mem (mem_alures_o),//++++
+        .reg_enable_from_mem (mem_wreg_o),//+++++
+        //.regaddr_from_mem (regaddr_from_mem),//++++
+        //.regdata_from_mem (regdata_from_mem),//++++
+        //.reg_enable_from_mem (reg_enable_from_mem),//+++++
+        //流水线暂�?
+        .stallreq   ( stallreq_from_id  ),
         .pc         ( id_pc     ),
         .inst       ( id_inst   ),
         .r1addr     ( r1addr    ),
@@ -162,8 +194,13 @@ module miniMIPS_Top
         .ex_opr1    ( ex_opr1   ),
         .ex_opr2    ( ex_opr2   ),
         .ex_offset  ( ex_offset ),
-        .ex_wreg    ( ex_wreg   ),
-        .ex_wraddr  ( ex_wraddr )
+        .ex_wreg    ( ex_wreg   ),//reg_enable_from_id_ex
+        .ex_wraddr  ( ex_wraddr ),//regaddr_from_id_ex 
+       // .ex_wraddr  ( regaddr_from_id_ex ),//++++++++++++++++++++++++++++
+       // .ex_wreg    ( reg_enable_from_id_ex),//++++++++++++++++++++++++
+        //流水线暂�?
+        .stall      ( stall) 
+
     );
 
     //EX stage
@@ -174,10 +211,12 @@ module miniMIPS_Top
         .opr1       ( ex_opr1   ),
         .opr2       ( ex_opr2   ),
         .offset     ( ex_offset ),
-        .alures     ( ex_alures ),
+        .alures     ( ex_alures ),//regdata_from_ex
         .m_wen      ( ex_m_wen  ),
         .m_addr     ( ex_m_addr ),
         .m_dout     ( ex_m_dout )
+
+        // .alures     (regdata_from_ex)//++++++++++++++++++++++
     );
 
     //EX_MEM
@@ -192,14 +231,17 @@ module miniMIPS_Top
         .ex_m_dout  ( ex_m_dout     ),
         .ex_wreg    ( ex_wreg       ),
         .ex_wraddr  ( ex_wraddr     ),
-        
         .mem_aluop  ( mem_aluop     ),
         .mem_alures ( mem_alures    ),
         .mem_m_wen  ( mem_m_wen     ),
         .mem_m_addr ( mem_m_addr    ),
         .mem_m_dout ( mem_m_dout    ),
         .mem_wreg   ( mem_wreg      ),
-        .mem_wraddr ( mem_wraddr    )
+        .mem_wraddr ( mem_wraddr    ),
+
+        //流水线暂�?
+        .stall      ( stall)
+
     );
 
     //MEM stage
@@ -215,15 +257,19 @@ module miniMIPS_Top
         .m_din_i    ( data_din      ),
 
         .aluop_o    ( mem_aluop_o   ),
-        .alures_o   ( mem_alures_o  ),
-        .wreg_o     ( mem_wreg_o    ),
-        .wraddr_o   ( mem_wraddr_o  ),
+        .alures_o   ( mem_alures_o  ),//regdata_from_mem
+        .wreg_o     ( mem_wreg_o    ),//reg_enable_from_mem
+        .wraddr_o   ( mem_wraddr_o  ),//regaddr_from_mem
 
         .data_wen_o ( data_wen      ),
         .data_addr_o( data_addr     ),
         .data_dout_o( data_dout     ),
 
         .m_din_o    ( mem_m_din_o   )
+
+      //  .alures_o   ( regdata_from_mem),//+++++
+      //  .wreg_o     ( reg_enable_from_mem),//++++
+      //  .wraddr_o   ( regaddr_from_mem)//++++
 
     );
 
@@ -242,7 +288,9 @@ module miniMIPS_Top
         .wb_alures  ( wb_alures     ),
         .wb_m_din   ( wb_m_din      ),
         .wb_wreg    ( wb_wreg       ),
-        .wb_wraddr  ( wb_wraddr     )
+        .wb_wraddr  ( wb_wraddr     ),
+        //流水线暂�?
+        .stall      ( stall)
     );
 
     //WB stage
@@ -256,6 +304,13 @@ module miniMIPS_Top
         .wreg_o     ( wb_wreg_o     ),
         .wraddr_o   ( wb_wraddr_o   ),
         .wrdata_o   ( wb_wrdata     )
+    );
+    //额外增加的控制模�?
+    CTRL ctrl(
+        .rst        ( rst ),
+        .stall      ( stall),
+        .stallreq_from_id   ( stallreq_from_id)
+
     );
 
 endmodule

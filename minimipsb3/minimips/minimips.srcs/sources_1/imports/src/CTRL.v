@@ -2,10 +2,10 @@
 
 module CTRL
 (
-    input wire         rst;
-    input wire         stallreq_from_id;
+    input wire         rst,
+    input wire         stallreq_from_id,
     //input wire         stallreq_from_ex;
-    output reg [ 5: 0] stall;
+    output reg [ 5: 0] stall
 
 );
 
