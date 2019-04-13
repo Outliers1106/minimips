@@ -45,7 +45,7 @@ module Basys3_Top
         .data_din   ( data_din      )
     );
 
-    irom irom
+    inst_rom irom
     (
         .a      ( inst_addr [11:2]  ),
         .spo    ( inst_data         )
