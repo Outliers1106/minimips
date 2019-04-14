@@ -50,6 +50,7 @@ module ID_EX
             ex_wraddr  <= 5'b0;
         end
         else if(stall[2]==1'b1&&stall[3]==1'b0) begin
+            // ID stall & EX not stall
             ex_pc      <= 32'b0;
             ex_aluop   <= 4'h0;
             ex_opr1    <= 32'b0;

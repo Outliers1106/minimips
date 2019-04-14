@@ -34,10 +34,12 @@ module IF_ID
             id_inst <= 32'b0;
         end
         else if(stall[1]==1'b1&&stall[2]==1'b0) begin
+            // IF stall & ID not stall
             id_pc   <= 32'b0;
             id_inst <= 32'b0;
         end
         else if(stall[1]==1'b0) begin
+            // 
             id_pc   <= if_pc;
             id_inst <= if_inst;
         end

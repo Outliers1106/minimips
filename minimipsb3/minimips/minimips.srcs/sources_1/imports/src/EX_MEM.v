@@ -33,7 +33,7 @@ module EX_MEM
     output reg  [31: 0] mem_m_dout,
     output reg          mem_wreg,
     output reg  [ 4: 0] mem_wraddr,
-    //流水线暂停
+    //stall signal
     input  wire [ 5: 0] stall
 );
 
@@ -48,6 +48,7 @@ module EX_MEM
             mem_wraddr  <= 5'b0;
         end
         else if (stall[3]==1'b1&&stall[4]==1'b0) begin
+            // EX stall & MEM not stall
             mem_aluop   <= 4'h0;
             mem_alures  <= 32'b0;
             mem_m_wen   <= 1'b0;

@@ -43,7 +43,7 @@ module RegFile
             if(wreg) GPR[wraddr] <= wrdata;
         end
     end
-    //wb_id冲突,读rs的地�?和写rt的地�?相同,就把要写的数据直接给rs
+    //wb_id冲突,读rs的地?和写rt的地?相同,就把要写的数据直接给rs
     assign r1data = r1addr == 5'b0 ? 32'b0 : ((r1addr==wraddr && wreg==1'b1 )?wrdata:GPR[r1addr]);
     assign r2data = r2addr == 5'b0 ? 32'b0 : GPR[r2addr];
 
