@@ -1,0 +1,307 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 5872
+License: Customer
+
+Current time: 	Tue Apr 16 15:12:16 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 120
+Available screens: 1
+Available disk space: 23 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Xilinx2019/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	D:/Xilinx2019/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	涂彦伦
+User home directory: C:/Users/涂彦伦
+User working directory: D:/课件/大三下/体系结构/minimips/minimipsb3/minimips
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx2019/Vivado
+HDI_APPROOT: D:/Xilinx2019/Vivado/2018.3
+RDI_DATADIR: D:/Xilinx2019/Vivado/2018.3/data
+RDI_BINDIR: D:/Xilinx2019/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/涂彦伦/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/涂彦伦/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/涂彦伦/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	D:/Xilinx2019/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/vivado.log
+Vivado journal file location: 	D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/vivado.jou
+Engine tmp dir: 	D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/.Xil/Vivado-5872-DESKTOP-PL14CV5
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx2019/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: D:/Xilinx2019/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx2019/Vivado/2018.3
+XILINX_VIVADO: D:/Xilinx2019/Vivado/2018.3
+XILINX_VIVADO_HLS: D:/Xilinx2019/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 503 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// WARNING: HEventQueue.dispatchEvent() is taking  11419 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1255 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2891 ms.
+// TclEventType: PROJECT_OPEN_DIALOG
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking 13695ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  13712 ms.
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (cp):  Open Project : addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  3399 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1682 ms.
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  3143 ms.
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  3057 ms.
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 105 MB (+107506kb) [00:02:12]
+// [Engine Memory]: 570 MB (+445725kb) [00:02:12]
+// HMemoryUtils.trashcanNow. Engine heap size: 503 MB. GUI used memory: 46 MB. Current time: 4/16/19, 3:12:41 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 13289 ms. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  8937 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1582 ms.
+// Tcl Message: open_project D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/minimips.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx2019/Vivado/2018.3/data/ip'. 
+// WARNING: HEventQueue.dispatchEvent() is taking  1514 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2568 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1194 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 2390ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2390 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 40683 ms. Increasing delay to 4000 ms.
+// Project name: minimips; location: D:/课件/大三下/体系结构/minimips/minimipsb3/minimips; part: xc7a35tcpg236-1
+// WARNING: HEventQueue.dispatchEvent() is taking  3735 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:40 ; elapsed = 00:01:49 . Memory (MB): peak = 620.027 ; gain = 76.840 
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 559ms to process. Increasing delay to 3000 ms.
+dismissDialog("Open Project"); // bx (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  5109 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1876 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4029 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1174 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2862 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 23771 ms. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  6175 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5069 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10675 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  7204 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1029 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 63315 ms. Increasing delay to 189945 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 22658 ms. Increasing delay to 6000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  19049 ms.
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 5804ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5714 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  6288 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 573ms to process. Increasing delay to 2000 ms.
+// Tcl Message: update_compile_order -fileset sources_1 
+// WARNING: HEventQueue.dispatchEvent() is taking  1049 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3509 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5305 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 18616 ms. Increasing delay to 7000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1733 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1711 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1442 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1636 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5906 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 8060 ms. Increasing delay to 8000 ms.
+// Elapsed time: 148 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  1424 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1898 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1414 ms.
+// Elapsed time: 19 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cp):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// WARNING: HEventQueue.dispatchEvent() is taking  2967 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1834 ms.
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/minimips.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj simu_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4754 ms. Increasing delay to 9000 ms.
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 623.070 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '10' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/minimips.sim/sim_1/behav/xsim' 
+// WARNING: HEventQueue.dispatchEvent() is taking  2171 ms.
+// [Engine Memory]: 611 MB (+13641kb) [00:06:57]
+// TclEventType: LAUNCH_SIM
+// WARNING: HEventQueue.dispatchEvent() is taking  5958 ms.
+// Tcl Message: Built simulation snapshot simu_behav  ****** Webtalk v2018.3 (64-bit)   **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018   **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.  source D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/minimips.sim/sim_1/behav/xsim/xsim.dir/simu_behav/webtalk/xsim_webtalk.tcl -notrace 
+// WARNING: HEventQueue.dispatchEvent() is taking  3758 ms.
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-206] Exiting Webtalk at Tue Apr 16 15:18:20 2019... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:25 . Memory (MB): peak = 623.070 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '30' seconds 
+// TclEventType: LOAD_FEATURE
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// WARNING: HEventQueue.dispatchEvent() is taking  3161 ms.
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 14761 ms. Increasing delay to 10000 ms.
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// [GUI Memory]: 111 MB (+548kb) [00:07:36]
+// WARNING: HEventQueue.dispatchEvent() is taking  1243 ms.
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/课件/大三下/体系结构/minimips/minimipsb3/minimips/minimips.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "simu_behav -key {Behavioral:sim_1:Functional:simu} -tclbatch {simu.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.3 Time resolution is 1 ps 
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 17813 ms. Increasing delay to 10000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 618 MB. GUI used memory: 57 MB. Current time: 4/16/19, 3:19:06 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1616 ms.
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Elapsed time: 99 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 9359 ms. Increasing delay to 10000 ms.
+// Tcl Message: source simu.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// WARNING: HEventQueue.dispatchEvent() is taking  5625 ms.
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 645 MB. GUI used memory: 56 MB. Current time: 4/16/19, 3:19:51 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5125 ms. Increasing delay to 10000 ms.
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// Tcl Message: add_wave: Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 645.930 ; gain = 12.273 
+// Tcl Message: # run 1000ns 
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 657.012 ; gain = 10.852 xsim: Time (s): cpu = 00:00:15 ; elapsed = 00:01:21 . Memory (MB): peak = 657.012 ; gain = 33.941 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'simu_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:23 ; elapsed = 00:02:22 . Memory (MB): peak = 657.012 ; gain = 33.941 
+// [Engine Memory]: 645 MB (+3019kb) [00:08:40]
+// 'd' command handler elapsed time: 144 seconds
+// Elapsed time: 45 seconds
+dismissDialog("Run Simulation"); // e (cp)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// WARNING: updateGUI() is taking  4734 ms.
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// WARNING: HEventQueue.dispatchEvent() is taking  3604 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1239 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2097 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 15154 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1707 ms.
+// Elapsed time: 39 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, "Simulation Waveform"); // ac (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  3126 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1947 ms.
+// Elapsed time: 11 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  4398 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  7046 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5160 ms.
+// Elapsed time: 17 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  5786 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2917 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11016 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5036 ms.
+// Elapsed time: 16 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, "Simulation Waveform"); // ac (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  3443 ms.
+selectMenuItem(RDIResourceCommand.RDICommands_WAVEFORM_OPEN_CONFIGURATION, "Open Configuration..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_OPEN_CONFIGURATION
+// WARNING: HEventQueue.dispatchEvent() is taking  1564 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1743 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4750 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5941 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 60 ms. Decreasing delay to 2060 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  6326 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1677 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 8006 ms. Increasing delay to 24018 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5460 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9450 ms.

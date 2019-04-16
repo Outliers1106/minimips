@@ -85,6 +85,7 @@ module miniMIPS_Top
 
     wire         wb_wreg_o;
     wire [ 4: 0] wb_wraddr_o;
+    /*
     //解决ex_id冲突�?增加的连�?
     wire [ 4: 0] regaddr_from_id_ex;//+++++++++++++++++++++++++++++++
     wire [31: 0] regdata_from_ex;//++++++++++++++++++++++++++++++++++
@@ -96,6 +97,7 @@ module miniMIPS_Top
     //流水线暂�?
     wire         stallreq_from_id;
     //wire         stallreq_from_ex;
+    */
     wire [ 5: 0] stall;
 
     // IF stage
@@ -130,21 +132,22 @@ module miniMIPS_Top
     // ID stage
     ID id
     (
-        //解决id_ex冲突
         //.regaddr_from_id_ex ( regaddr_from_id_ex),//+++++++++++
         .reg_enable_from_id_ex            (ex_wreg), 
         .regaddr_from_id_ex              (ex_wraddr ),
         .regdata_from_ex                (ex_alures),
         //.regdata_from_ex    ( regdata_from_ex),//+++++++++++++
         //.reg_enable_from_id_ex ( reg_enable_from_id_ex),//+++++++++++++
-        //解决id_mem冲突
+
         .regaddr_from_mem (mem_wraddr_o),//++++
         .regdata_from_mem (mem_alures_o),//++++
         .reg_enable_from_mem (mem_wreg_o),//+++++
         //.regaddr_from_mem (regaddr_from_mem),//++++
         //.regdata_from_mem (regdata_from_mem),//++++
         //.reg_enable_from_mem (reg_enable_from_mem),//+++++
-        //流水线暂�?
+        .alu_from_ex (ex_aluop),
+        .alu_from_mem ( mem_aluop_o ),
+        .m_din_from_mem ( mem_m_din_o ),
         .stallreq   ( stallreq_from_id  ),
         .pc         ( id_pc     ),
         .inst       ( id_inst   ),
@@ -211,7 +214,7 @@ module miniMIPS_Top
         .opr1       ( ex_opr1   ),
         .opr2       ( ex_opr2   ),
         .offset     ( ex_offset ),
-        .alures     ( ex_alures ),//regdata_from_ex
+        .alures     ( ex_alures ),
         .m_wen      ( ex_m_wen  ),
         .m_addr     ( ex_m_addr ),
         .m_dout     ( ex_m_dout )
@@ -257,9 +260,9 @@ module miniMIPS_Top
         .m_din_i    ( data_din      ),
 
         .aluop_o    ( mem_aluop_o   ),
-        .alures_o   ( mem_alures_o  ),//regdata_from_mem
-        .wreg_o     ( mem_wreg_o    ),//reg_enable_from_mem
-        .wraddr_o   ( mem_wraddr_o  ),//regaddr_from_mem
+        .alures_o   ( mem_alures_o  ),
+        .wreg_o     ( mem_wreg_o    ),
+        .wraddr_o   ( mem_wraddr_o  ),
 
         .data_wen_o ( data_wen      ),
         .data_addr_o( data_addr     ),

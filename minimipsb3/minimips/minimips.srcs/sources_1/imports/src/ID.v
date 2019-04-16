@@ -26,8 +26,8 @@ module ID
     output reg  [ 4: 0] r2addr,     // default rt
     input  wire [31: 0] r2data,
 
-    output reg  [31: 0] opr1,       // operator 1
-    output wire  [31: 0] opr2,       // operator 2
+    output wire [31: 0] opr1,       // operator 1
+    output wire [31: 0] opr2,       // operator 2
     output reg  [ 3: 0] aluop,      // alu type
     output wire [31: 0] offset,
     output reg          wreg,       // reg write enable signal
@@ -35,13 +35,15 @@ module ID
 
     output reg          br_flag,    // branch flag
     output reg  [31: 0] br_addr,    // branch address
-    //æµæ°´çº¿æš‚å�??
-    output reg         stallreq,    // use to requre the pipeline stall, you can use it
-    //id_ex å†²çª�?
+
+    output wire          stallreq,    // use to requre the pipeline stall, you can use it
+
     input  wire [31: 0] regdata_from_ex,//++++++++++++
     input  wire [ 4: 0] regaddr_from_id_ex,//+++++++++++++
     input  wire         reg_enable_from_id_ex,//+++++++++++++
-    //id_memå†²çª�?
+    input  wire [ 3: 0] alu_from_ex,
+    input  wire [ 3: 0] alu_from_mem,//alu_op from mem
+    input  wire [31: 0] m_din_from_mem,//mem_data write to reg (from mem)
     input  wire [31: 0] regdata_from_mem,//++++
     input  wire [ 4: 0] regaddr_from_mem,//++++
     input  wire         reg_enable_from_mem//++++
@@ -64,43 +66,66 @@ module ID
 
     wire [31: 0] pcp4      = pc + 32'd4;
     wire [31: 0] br_target = pcp4 + (sign_ext << 2);
-    
 
     reg  [31: 0] ext_imme;
     reg          r1read;
     reg          r2read;
+    wire         pre_inst_is_lw;
+    reg  [31: 0] r1data_out;
+    reg  [31: 0] r2data_out;
+    reg          stallreq_reg1;
+    reg          stallreq_reg2;
 
+    assign pre_inst_is_lw = (alu_from_ex==`ALU_LW)?1'b1:1'b0;//judge whether inst is lw 
     assign offset = sign_ext;
-    //assign opr1 = r1read ? r1data : ext_imme;
-    assign opr2 = r2read ? r2data : ext_imme;
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    always @(*) begin
-    //id_ex å†²çª�?
-	if ((r1addr==regaddr_from_id_ex)&&(reg_enable_from_id_ex==1'b1)&&(r1read==1'b1)) begin
-		opr1 <= regdata_from_ex;
-        if(aluop==`ALU_LW) begin//æµæ°´çº¿æš‚å�??
-            stallreq <= 1'b1;
+    always @ (*) begin
+        stallreq_reg1 <= 1'b0;
+        if(pre_inst_is_lw == 1'b1 && regaddr_from_id_ex == r1addr && r1read == 1'b1) begin
+            stallreq_reg1 <= 1'b1;
+        end else if(reg_enable_from_id_ex == 1'b1 && regaddr_from_id_ex == r1addr) begin
+            r1data_out <= regdata_from_ex;
+        end else if(reg_enable_from_mem == 1'b1 && regaddr_from_mem == r1addr) begin
+            r1data_out <= regdata_from_mem;
+        end else begin
+            r1data_out <= r1data;
         end
-    end else if(r1read==1'b1) begin
-        opr1 <=r1data;
-    end else begin
-        opr1 <= ext_imme;
     end
-    end
-    
-    always @(*) begin
-    //id_mem å†²çª�?
-    if ((r1addr==regaddr_from_mem)&&(reg_enable_from_mem==1'b1)&&(r1read==1'b1)) begin
-        opr1 <= regaddr_from_mem;
-        if(aluop==`ALU_LW) begin//æµæ°´çº¿æš‚å�??
-            stallreq <= 1'b1;
+    always @ (*) begin
+        stallreq_reg2 <= 1'b0;
+        if(pre_inst_is_lw == 1'b1 && regaddr_from_id_ex == r2addr && r2read == 1'b1) begin
+            stallreq_reg2 <= 1'b1;
+        end else if(reg_enable_from_id_ex == 1'b1 && regaddr_from_id_ex == r2addr) begin
+            r2data_out <= regdata_from_ex;
+        end else if(reg_enable_from_mem == 1'b1 && regaddr_from_mem == r2addr) begin
+            r2data_out <= (alu_from_mem == `ALU_LW) ? m_din_from_mem : regdata_from_mem;
+        end else begin
+            r2data_out <= r2data;
         end
-    end else if(r1read==1'b1) begin
-        opr1 <=r1data;
-    end else begin
-        opr1 <= ext_imme;
     end
+
+    assign opr1 = r1read ? r1data_out : ext_imme;
+    assign opr2 = r2read ? r2data_out : ext_imme;
+    assign stallreq = stallreq_reg1 | stallreq_reg2;
+
+    /*
+    always @(*) begin
+        stallreq <= 1'b0;
+        if ((r1addr==regaddr_from_id_ex)&&(reg_enable_from_id_ex==1'b1)&&(r1read==1'b1)) begin
+            r1data_out <= regdata_from_ex;
+            if(pre_inst_is_lw==1'b1) begin//if the pre inst is lw then stop
+                stallreq <= 1'b1;
+            end
+        end else if((r1addr==regaddr_from_mem)&&(reg_enable_from_mem==1'b1)&&(r1read==1'b1))begin
+            r1data_out <= (alu_from_mem==`ALU_LW)?m_:regdata_from_mem;
+            if(pre_inst_is_lw==1'b1) begin//if the pre inst is lw then stop
+                stallreq <= 1'b1;
+            end
+        end else begin
+            r1data_out <= r1data;
+        end
     end
+    */
     always @(*) begin
         aluop     <= `ALU_NOP;
         r1read    <= 1'b0;
